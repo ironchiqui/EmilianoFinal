@@ -1,6 +1,31 @@
-/** First Wollok example */
-object wollok {
-	method howAreYou() {
-		return 'I am Wolloktastic!'
+object rotiseria{
+	
+	method cocinar(comida){
+		
+		comida.coccion()
+	}
+	
+}
+
+object pollo{
+	
+	var crudo= true
+	
+	
+	method coccion(){
+		
+		crudo=false
+		
+	}
+}
+object asado{
+	
+	var crudo= true
+	
+	
+	method coccion(){
+		
+		crudo=false
+		
 	}
 }
