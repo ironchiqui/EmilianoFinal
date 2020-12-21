@@ -17,6 +17,9 @@ object pollo{
 		crudo=false
 		
 	}
+	method estaCrudo(){
+		return crudo
+	}
 }
 object asado{
 	
@@ -27,5 +30,8 @@ object asado{
 		
 		crudo=false
 		
+	}
+	method estaCrudo(){
+		return crudo
 	}
 }
