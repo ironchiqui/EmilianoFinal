@@ -6,3 +6,15 @@ test "LA rotiseria pone a cocinar una comida y se pone su estado pasa a cocinado
 	assert.notThat(pollo.estaCrudo())
 
 }
+test "La rotiseria realiza la coccion del pollo y el asado al hacer el pedido navideño" {
+
+	rotiseria.comboNavideno()
+	assert.notThat(pollo.estaCrudo())
+	assert.notThat(asado.estaCrudo())
+}
+test "El precio del combo Navideño es de 1200" {
+
+	rotiseria.precioComboNavideno()
+	assert.equals(1200,rotiseria.precioComboNavideno())
+	
+}
