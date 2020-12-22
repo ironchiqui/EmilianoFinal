@@ -1,9 +1,12 @@
+import carnes.*
+import repulgues.*
+
 object rotiseria{
 	
 	var comidas =[pollo,asado]
-	method cocinar(comida){
+	method cocinar(comida, min){
 		
-		comida.coccion()
+		comida.coccion(min)
 		}
 	method agregarNuevaComida(comida){
 		
@@ -14,8 +17,8 @@ object rotiseria{
 		comidas.remove(comida)
 	}
 	
-	method comboNavideno(){
-		comidas.forEach{comida => comida.coccion()}
+	method comboNavideno(min){
+		comidas.forEach{comida => comida.coccion(min)}
 	}
 	method precioComboNavideno(){
 		
@@ -23,38 +26,3 @@ object rotiseria{
 	}
 }
 
-object pollo{
-	
-	var crudo= true
-	
-	
-	method coccion(){
-		
-		crudo=false
-		
-	}
-	method estaCrudo(){
-		return crudo
-	}
-	method precio(){
-		return 200
-	}
-}
-object asado{
-	
-	var crudo= true
-	
-	
-	method coccion(){
-		
-		crudo=false
-		
-	}
-	method estaCrudo(){
-		return crudo
-	}
-	method precio(){
-		
-		return 1000
-	}
-}

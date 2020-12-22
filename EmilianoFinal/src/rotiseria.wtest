@@ -1,4 +1,6 @@
 import rotiseria.*
+import carnes.*
+import repulgues.*
 
 test "LA rotiseria pone a cocinar una comida y se pone su estado pasa a cocinado" {
 
