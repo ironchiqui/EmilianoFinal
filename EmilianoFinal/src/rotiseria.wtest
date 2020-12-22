@@ -2,17 +2,33 @@ import rotiseria.*
 import carnes.*
 import repulgues.*
 
-test "LA rotiseria pone a cocinar una comida y se pone su estado pasa a cocinado" {
+describe "test Rotiseria "{
+	
+	const empanadaojaldre = new EmpanadaOjaldre(relleno =carneAlCuchillo)
+	const empanadacomun = new EmpanadaComun(relleno= carneAlCuchillo)
+	
+	fixture{
+		
+		rotiseria.agregarNuevaComida(pollo)
+		rotiseria.agregarNuevaComida(asado)
+		rotiseria.agregarNuevaComida(empanadacomun)
+		rotiseria.agregarNuevaComida(empanadaojaldre)
+		
+		
+	}
 
-	rotiseria.cocinar(pollo)
-	assert.notThat(pollo.estaCrudo())
+test "LA rotiseria pone a cocinar una comida y se pone su estado pasa a cocinado y esta jugoso" {
 
+	rotiseria.cocinar(pollo,70)
+	assert.that(pollo.estaCocinado())
+	assert.that(pollo.estaApunto())
 }
 test "La rotiseria realiza la coccion del pollo y el asado al hacer el pedido navideño" {
 
 	rotiseria.comboNavideno()
-	assert.notThat(pollo.estaCrudo())
-	assert.notThat(asado.estaCrudo())
+	
+	assert.notThat(pollo.estaCocinado())
+	assert.notThat(asado.estaCocinado())
 }
 test "El precio del combo Navideño es de 1200" {
 
@@ -20,3 +36,6 @@ test "El precio del combo Navideño es de 1200" {
 	assert.equals(1200,rotiseria.precioComboNavideno())
 	
 }
+
+}
+

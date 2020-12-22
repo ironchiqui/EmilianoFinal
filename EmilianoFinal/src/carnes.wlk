@@ -2,40 +2,41 @@ import rotiseria.*
 
 object pollo{
 	
-	var crudo= true
-	var jugoso
+	var cocinado= false
+	var jugoso =true
 	
 	method cocinar(min){
 		
 		if (min < 60){
-		  crudo=true	
+		  cocinado=false	
 			
 		}else if(min >= 60 and min <= 90 ){
-			crudo = false
+			cocinado = true
 			jugoso = true
 			
 		}
 		else if( min > 90){
 			
-			crudo = false
+			cocinado = true
 			jugoso = false
 		}
 		
 		
 	}
 	method estaCalcinado(){
-		return not(self.estaCrudo()) and not(self.estaJugoso())
+		return self.estaCocinado() and not(self.estaJugoso())
 	}
-	method estaCrudo(){
-		return crudo
+	method estaCocinado(){
+		return cocinado
 		
 	}
-	
+
 	
 	method estaApunto(){
-		return not(self.estaCrudo()) and self.estaJugoso()
+		return self.estaCocinado() and self.estaJugoso()
 		
 	}
+	
 	
 	method estaJugoso(){
 		return jugoso
@@ -47,19 +48,50 @@ object pollo{
 }
 object asado{
 	
-	var crudo= true
+	var cocinado= false
+	var jugoso =true
 	
 	
-	method coccion(){
-		
-		crudo=false
-		
-	}
-	method estaCrudo(){
-		return crudo
-	}
+	
 	method precio(){
 		
 		return 1000
 	}
+	method cocinar(min){
+		
+		if (min < 60){
+		  cocinado=false	
+			
+		}else if(min >= 60 and min <= 90 ){
+			cocinado = true
+			jugoso = true
+			
+		}
+		else if( min > 90){
+			
+			cocinado = true
+			jugoso = false
+		}
+		
+		
+	}
+	method estaCalcinado(){
+		return self.estaCocinado() and not(self.estaJugoso())
+	}
+	method estaCocinado(){
+		return cocinado
+		
+	}
+
+	
+	method estaApunto(){
+		return self.estaCocinado() and self.estaJugoso()
+		
+	}
+	
+	
+	method estaJugoso(){
+		return jugoso
+}
+
 }

@@ -1,32 +1,42 @@
 import rotiseria.*
 
-class Repulgue {
+class Empanada {
 	
-	var property tipoMasa
+	
 	var property relleno
 	
 	
 	method tipoRepulgue()
-	
+	method tipoMasa()
 		
 }
 
-class Empanada inherits Repulgue{
+class EmpanadaOjaldre inherits Empanada{
 	
 	override method tipoRepulgue(){
-		return "cerrado"
+		return "pisado"
 	}
-	override method tipoMasa(masa){
-		tipoMasa= masa
+	override method tipoMasa(){
+		return masaOjaldre
 		
 	}
 	
 }
-
+class EmpanadaComun inherits Empanada{
+	
+	override method tipoRepulgue(){
+		return "doblado"
+	}
+	override method tipoMasa(){
+		return masaComun
+		
+	}
+	
+}
 
 object carneAlCuchillo{
 	 
-	var property coccion 
+	 
 	 
 	
 	
@@ -34,12 +44,12 @@ object carneAlCuchillo{
 
 object jamonQueso{
 	
-	var property coccion
+	
 }
 
 object masaOjaldre{
 	
-	var property coccion
+	
 	
 	method esCrujiente(){
 		
@@ -49,7 +59,7 @@ object masaOjaldre{
 }
 object masaComun{
 	
-	var property
+	
 	
 	method esCrujiente(){
 		

@@ -3,10 +3,10 @@ import repulgues.*
 
 object rotiseria{
 	
-	var comidas =[pollo,asado]
+	var comidas =[]
 	method cocinar(comida, min){
 		
-		comida.coccion(min)
+		comida.cocinar(min)
 		}
 	method agregarNuevaComida(comida){
 		
@@ -18,6 +18,7 @@ object rotiseria{
 	}
 	
 	method comboNavideno(min){
+		
 		comidas.forEach{comida => comida.coccion(min)}
 	}
 	method precioComboNavideno(){
