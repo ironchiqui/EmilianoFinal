@@ -1,14 +1,26 @@
 import rotiseria.*
 
 class Empanada {
-	
-	
+	const tipoComida="empanada"
+	var cocida = false
 	var property relleno
 	
 	
 	method tipoRepulgue()
 	method tipoMasa()
+	method cocinar(min){
+		if(min > 70){
+			cocida =true
+		}
 		
+	}
+	method cocida(){
+		return cocida
+	}	
+	method tipoDeComida(){
+		return tipoComida
+	}
+	
 }
 
 class EmpanadaOjaldre inherits Empanada{

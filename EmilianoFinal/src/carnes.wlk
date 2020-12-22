@@ -2,6 +2,7 @@ import rotiseria.*
 
 object pollo{
 	
+	const tipoComida ="carne"
 	var cocinado= false
 	var jugoso =true
 	
@@ -45,9 +46,12 @@ object pollo{
 	method precio(){
 		return 200
 	}
+	method tipoDeComida(){
+		return tipoComida
+	}
 }
 object asado{
-	
+	const tipoComida="carne"
 	var cocinado= false
 	var jugoso =true
 	
@@ -59,15 +63,12 @@ object asado{
 	}
 	method cocinar(min){
 		
-		if (min < 60){
-		  cocinado=false	
-			
-		}else if(min >= 60 and min <= 90 ){
+		 if(min >= 80 and min <= 100 ){
 			cocinado = true
 			jugoso = true
 			
 		}
-		else if( min > 90){
+		else if( min > 100){
 			
 			cocinado = true
 			jugoso = false
@@ -93,5 +94,8 @@ object asado{
 	method estaJugoso(){
 		return jugoso
 }
+method tipoDeComida(){
+		return tipoComida
+	}
 
 }

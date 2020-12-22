@@ -19,7 +19,11 @@ object rotiseria{
 	
 	method comboNavideno(min){
 		
-		comidas.forEach{comida => comida.coccion(min)}
+		self.listaDeCarnes().forEach{comida => comida.cocinar(min)}
+	}
+	method listaDeCarnes(){
+		
+		return comidas.filter{comida=> comida.tipoDeComida()== "carne"}
 	}
 	method precioComboNavideno(){
 		

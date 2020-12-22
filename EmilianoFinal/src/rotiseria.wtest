@@ -25,7 +25,7 @@ test "LA rotiseria pone a cocinar una comida y se pone su estado pasa a cocinado
 }
 test "La rotiseria realiza la coccion del pollo y el asado al hacer el pedido navideño" {
 
-	rotiseria.comboNavideno()
+	rotiseria.comboNavideno(70)
 	
 	assert.notThat(pollo.estaCocinado())
 	assert.notThat(asado.estaCocinado())
